@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%; /* #ffffff */
+  --foreground: 200 50% 3%; /* #00171f */
+  --muted: 210 40% 95%;
+  --muted-foreground: 215 16% 47%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 200 50% 3%;
+  --card: 0 0% 100%;
+  --card-foreground: 200 50% 3%;
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --primary: 198 100% 46%; /* #00a8e8 */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 202 95% 20%; /* #003459 */
+  --secondary-foreground: 0 0% 98%;
+  --accent: 195 100% 33%; /* #007ea7 */
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 60 9% 98%;
+  --ring: 198 100% 46%;
+  --radius: 0.5rem;
+  
+  /* Custom brand colors */
+  --brand-primary: 198 100% 46%; /* #00a8e8 */
+  --brand-dark: 200 50% 3%; /* #00171f */
+  --brand-secondary: 202 95% 20%; /* #003459 */
+  --brand-accent: 195 100% 33%; /* #007ea7 */
+}
+
+.dark {
+  --background: 200 50% 3%; /* #00171f */
+  --foreground: 0 0% 98%;
+  --muted: 200 50% 8%;
+  --muted-foreground: 215 20% 65%;
+  --popover: 200 50% 3%;
+  --popover-foreground: 0 0% 98%;
+  --card: 200 50% 3%;
+  --card-foreground: 0 0% 98%;
+  --border: 200 50% 8%;
+  --input: 200 50% 8%;
+  --primary: 198 100% 46%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 202 95% 20%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 195 100% 33%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 198 100% 46%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--brand-primary)) 0%, hsl(var(--brand-accent)) 100%);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+  }
+  
+  .card-3d:hover {
+    transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+  }
+  
+  .hover-lift {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 168, 232, 0.2);
+  }
+  
+  .service-card {
+    perspective: 1000px;
+  }
+  
+  .service-card-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .service-card:hover .service-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .service-card-front, .service-card-back {
+    backface-visibility: hidden;
+  }
+  
+  .service-card-back {
+    transform: rotateY(180deg);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  .animate-rotate-slow {
+    animation: rotateSlow 20s linear infinite;
+  }
+  
+  .animate-bounce-soft {
+    animation: bounceSoft 3s ease-in-out infinite;
+  }
+  
+  .animate-gradient {
+    animation: gradientShift 8s ease-in-out infinite;
+    background-size: 400% 400%;
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotateY(0deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotateY(5deg); 
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(50px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    transform: scale(0.9); 
+    opacity: 0; 
+  }
+  to { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 168, 232, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 168, 232, 0.6);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounceSoft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

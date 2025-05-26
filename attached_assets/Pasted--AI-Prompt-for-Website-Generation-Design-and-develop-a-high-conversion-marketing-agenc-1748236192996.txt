@@ -1,0 +1,60 @@
+
+### **AI Prompt for Website Generation**  
+*"Design and develop a high-conversion marketing agency website focused on Amazon PPC, listing optimization, and brand growth strategies using the following specifications:*  
+
+#### **1. Core Requirements**  
+- **Technologies**:  
+  - Frontend: **React.js** (functional components, hooks) + **Redux** (state management for contact form).  
+  - Styling: **Styled-components** (CSS-in-JS) with a theme provider.  
+  - Routing: **React Router v6**.  
+  - Animations: **Framer Motion** for scroll-triggered transitions.  
+
+- **Color Palette**:  
+  - Primary: `#00a8e8` (CTAs, highlights)  
+  - Dark: `#00171f` (navbar/footer)  
+  - Light: `#ffffff` (backgrounds)  
+  - Secondary: `#003459` (section backgrounds)  
+  - Accent: `#007ea7` (borders, hover effects)  
+
+#### **2. Page Structure**  
+- **Homepage**: Hero section (animated headline + CTA), Services grid, Trust indicators (client logos).  
+- **About Us**: Mission statement, team bios, animated timeline (e.g., "8+ years in Amazon marketing").  
+- **Services**: Cards for PPC, DSP, Listing Optimization, Reimbursement (expandable details).  
+- **Testimonials**: Carousel with client quotes + metrics (e.g., "300% ROI").  
+- **Contact**: Form with Redux state management (name, email, message).  
+
+#### **3. Design Guidelines**  
+- **Navbar**: Sticky, with logo (left), links (center: Home, About, Services, Testimonials, Contact), and CTA button ("Free Audit") on the right.  
+- **Animations**:  
+  - Hero: Fade-in + sliding text.  
+  - Services: Card hover effects (scale + shadow).  
+  - Scroll: Section fade-ins (AOS-like).  
+- **Footer**: 4-column layout (Quick Links, Services, Contact Info, Newsletter).  
+
+#### **4. Functional Requirements**  
+- **Redux**: Store contact form submissions in state.  
+- **Responsiveness**: Mobile-first design (hamburger menu for <768px).  
+- **Performance**: Lazy-loaded images, optimized SVGs.  
+
+*Deliverables:*  
+1. Figma/Adobe XD mockup (for approval).  
+2. React codebase with:  
+   - Component breakdown (Navbar, Hero, Services, etc.).  
+   - Redux store configuration.  
+   - Theme.js for styling consistency.  
+3. Deployment-ready build (Vercel/Netlify).  
+
+*Exclude*: Login/registration flows. Prioritize speed and SEO (meta tags, semantic HTML)."*  
+
+### **Tools to Mention in the Prompt**  
+- **Design**: Figma (for prototyping).  
+- **Development**: VS Code, Git.  
+- **Libraries**:  
+  - `styled-components` (theming).  
+  - `framer-motion` (animations).  
+  - `react-icons` (SVG icons).  
+
+### **Example AI Response Expected**  
+- A **Figma wireframe** with your color palette.  
+- **React component tree** (like the one provided earlier).  
+- **Redux slice code** for form handling.  
